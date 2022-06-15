@@ -10,10 +10,16 @@ body {
 /* ENCABEZADO */
 .logo{
     border-radius: 100px;
-    display: inline-block;
+    display: inline;
     height: 150px;
     width: 150px;
     grid-area: logo;
+}
+
+.bandera{
+    background-image: linear-gradient(to right, rgba(47,79,152,0.9), rgba(148, 152, 161,0.9)), url("../images/banderacuadros6.jpg");
+    background-repeat: no-repeat;
+    padding: 80px;
 }
 
 h1{
@@ -24,24 +30,13 @@ h1{
     color: $colorSecundario;
     padding: 20px;
     grid-area: h1;
-}
-
-.redes{
-    grid-area: redes;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    svg{
-        color: $colorSecundario;
-    }
+    border-radius: 15px;
 }
 
 /* BARRA DE NAVEGACION */
 
-.barra{
-    margin-left: 38%;
-    font-family: roboto;
+.barra{  
+    font-family: robotoBold;
     padding: 15px;
     background-color:$colorPrincipal;
     border: solid 1px $colorSecundario;
@@ -49,18 +44,25 @@ h1{
     width: 100%;
 
     ul{
-        background-color: $colorPrincipal;
+        background-color: $colorPrincipal;        
     }
 
     a{
         font-size: 16px;
         color: $colorSecundario;
+        margin-left: 12%;
         
         &:hover{
             background-image: linear-gradient(to right, $colorPrincipal, rgb(148, 152, 161));
-            border-radius: 5px;
-        }
+            border-radius: 10px;
+        } 
     }
+
+    ul>li>a{
+        width: 100%;
+        margin-left: 0%;
+        padding: 20px;
+        }
 }
 
 .margin{
@@ -107,6 +109,27 @@ h3{
     text-align: center;
     background-color: $colorPrincipal;
     margin-top: 2%;
+    color: $colorSecundario;
+    background-image: linear-gradient(to top, $colorPrincipal, rgb(145, 164, 209), whitesmoke);
+    nav a{
+        color: $colorSecundario;
+        margin: 8px;
+            &:hover{
+                background-image: linear-gradient(to right, $colorPrincipal, rgb(152, 177, 233));
+                border-radius: 5px;
+                color: black;
+        }  
+    }
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    svg{
+        color: $colorSecundario;
+        margin: 8px;
+    }
 }
 
 /* MEDIA QUERIES 360PX */
@@ -118,11 +141,15 @@ h3{
     .logo{
         height: 120px;
         width: 120px;
-        margin-left: 22%;
+        margin-left: 17%;
     }
     
     h1{
         font-size: 20px;
+    }
+
+    .bandera{
+        padding: 10px;
     }
 
     .principal__titulo{
@@ -141,14 +168,8 @@ h3{
             display: block;
             text-align: center;
             margin-left: 0px;
-
-            &:hover{
-                background-image: linear-gradient(to right, $colorPrincipal, rgb(148, 152, 161));
-                border-radius: 5px;
-            }
         }
     }
-
     .redes{
         display: flex;
         flex-direction: row;

@@ -25,10 +25,15 @@ body {
 /* ENCABEZADO */
 .logo {
   border-radius: 100px;
-  display: inline-block;
+  display: inline;
   height: 150px;
   width: 150px;
   grid-area: logo; }
+
+.bandera {
+  background-image: linear-gradient(to right, rgba(47, 79, 152, 0.9), rgba(148, 152, 161, 0.9)), url("../images/banderacuadros6.jpg");
+  background-repeat: no-repeat;
+  padding: 80px; }
 
 h1 {
   background-image: linear-gradient(to right, #2f4f98, #9498a1);
@@ -37,20 +42,12 @@ h1 {
   font-size: 40px;
   color: black;
   padding: 20px;
-  grid-area: h1; }
-
-.redes {
-  grid-area: redes;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
-  .redes svg {
-    color: black; }
+  grid-area: h1;
+  border-radius: 15px; }
 
 /* BARRA DE NAVEGACION */
 .barra {
-  margin-left: 38%;
-  font-family: roboto;
+  font-family: robotoBold;
   padding: 15px;
   background-color: #2f4f98;
   border: solid 1px black;
@@ -60,10 +57,15 @@ h1 {
     background-color: #2f4f98; }
   .barra a {
     font-size: 16px;
-    color: black; }
+    color: black;
+    margin-left: 12%; }
     .barra a:hover {
       background-image: linear-gradient(to right, #2f4f98, #9498a1);
-      border-radius: 5px; }
+      border-radius: 10px; }
+  .barra ul > li > a {
+    width: 100%;
+    margin-left: 0%;
+    padding: 20px; }
 
 .margin {
   margin-left: 7%; }
@@ -102,7 +104,24 @@ h3 {
   font-size: 16px;
   text-align: center;
   background-color: #2f4f98;
-  margin-top: 2%; }
+  margin-top: 2%;
+  color: black;
+  background-image: linear-gradient(to top, #2f4f98, #91a4d1, whitesmoke); }
+  .futer nav a {
+    color: black;
+    margin: 8px; }
+    .futer nav a:hover {
+      background-image: linear-gradient(to right, #2f4f98, #98b1e9);
+      border-radius: 5px;
+      color: black; }
+
+.redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .redes svg {
+    color: black;
+    margin: 8px; }
 
 /* MEDIA QUERIES 360PX */
 @media (max-width: 360px) {
@@ -110,9 +129,11 @@ h3 {
   .logo {
     height: 120px;
     width: 120px;
-    margin-left: 22%; }
+    margin-left: 17%; }
   h1 {
     font-size: 20px; }
+  .bandera {
+    padding: 10px; }
   .principal__titulo {
     font-size: 18px;
     padding: 0px;
@@ -124,9 +145,6 @@ h3 {
     display: block;
     text-align: center;
     margin-left: 0px; }
-    .barra a:hover {
-      background-image: linear-gradient(to right, #2f4f98, #9498a1);
-      border-radius: 5px; }
   .redes {
     display: flex;
     flex-direction: row;
@@ -192,19 +210,50 @@ h3 {
   display: block;
   text-align: center;
   margin-bottom: 5%;
-  list-style: none; }
+  list-style: none;
+  background-image: linear-gradient(to right, rgba(47, 79, 152, 0.8), rgba(148, 152, 161, 0.8)), url("../images/carrera5.jpg");
+  background-repeat: no-repeat;
+  padding: 50px; }
+  .fechas h3 {
+    background-image: linear-gradient(to right, #2f4f98, #9498a1);
+    padding: 10px;
+    border-radius: 15px;
+    font-family: robotoBold;
+    font-size: 35px; }
+  .fechas h4 {
+    font-size: 30px;
+    font-family: robotoBold; }
 
 .principal__fechas {
   grid-area: fechas;
   display: block;
-  transition: transform 2s;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 5px; }
+
+.videoindex {
+  margin-left: 18%; }
+
+.noticias {
+  font-size: 20px;
+  text-align: justify;
+  margin-left: 15px;
+  margin-right: 15px; }
 
 /* PÁGINA NOSOTROS */
 .contenedorNosotros {
   display: grid;
-  grid-template-areas: "titulo titulo titulo" "carruselComienzos comienzos comienzos" "act act carruselAct" "futer futer futer"; }
+  grid-template-areas: "titulo titulo titulo" "carruselComienzos comienzos comienzos" "act act carruselAct" "map map map" "futer futer futer"; }
+
+.map {
+  grid-area: map; }
+  .map h4 {
+    font-size: 25px;
+    font-family: robotoBold;
+    margin-top: 50px;
+    margin-left: 50px; }
+  .map iframe {
+    margin-top: 50px;
+    margin-bottom: 50px; }
 
 .carruselComienzos {
   grid-area: carruselComienzos;
@@ -243,9 +292,8 @@ h3 {
 
 /* PÁGINA CAMPEONATOS */
 .contenedorCampeonatos {
-  width: 100%;
-  display: grid;
-  grid-template-areas: "titulo titulo titulo" "tablaKa . tablaKt" "tablaAa . tablaAt" "futer futer futer"; }
+  background-image: linear-gradient(to right, rgba(218, 216, 216, 0.9), rgba(193, 193, 194, 0.9)), url("../images/podio.jpg");
+  background-repeat: unset; }
 
 #tablaKa {
   grid-area: tablaKa; }
@@ -261,28 +309,46 @@ h3 {
 
 .tabla {
   font-family: roboto;
-  font-size: 20px;
-  padding: 20px;
-  border: solid 3px #2f4f98;
-  border-radius: 10px;
-  display: inline-block;
-  margin-left: 20%; }
-
-.tabla td {
+  font-size: 22px;
+  border: solid 5px #2f4f98;
+  border-radius: 15px solid 5px #2f4f98;
+  padding: 40px;
+  margin-left: 24%;
   text-align: center;
-  padding: 5px; }
+  background-color: rgba(245, 245, 245, 0.4);
+  margin-top: 30px; }
+  .tabla th {
+    background-color: rgba(176, 169, 243, 0.4); }
+
+.videoCampeonatos {
+  margin: 40px;
+  margin-left: 70px; }
 
 /*PÁGINA REGLAMENTOS*/
 .textoReglamentos {
   font-family: robotoLight;
   font-size: 18px;
   text-align: justify;
+  margin: 15px;
   margin-top: 20px; }
+
+.estiloAcordeon h2 button {
+  background-image: linear-gradient(to left, #2f4f98, #9498a1);
+  color: black;
+  font-family: robotoBold;
+  font-size: 20px;
+  transition: background-image ,10s; }
+  .estiloAcordeon h2 button:hover {
+    background-image: linear-gradient(to right, #2f4f98, #9498a1); }
+
+.estiloAcordeon p {
+  font-size: 20px;
+  font-family: roboto; }
 
 /*Efecto Parallax*/
 .img-1 {
   background-image: url("../images/karting tierra.jpeg");
-  margin-top: 10%; }
+  margin-top: 40px; }
 
 .img-2 {
   background-image: url("../images/KART.jpg");
@@ -321,13 +387,16 @@ form {
   font-size: 20px;
   display: inline-block;
   margin-top: 10px;
-  margin-left: 320px;
+  margin-bottom: 40px;
+  margin-left: 360px;
   width: 700px;
-  border: solid 3px #2f4f98; }
+  border: solid 3px #2f4f98;
+  background-image: linear-gradient(to left, #2f4f98, #9498a1); }
 
 label {
   display: block;
-  padding: 10px; }
+  padding: 10px;
+  margin-left: 15px; }
 
 textarea {
   display: block;
@@ -340,7 +409,14 @@ input {
   display: inline;
   margin-top: 4%;
   margin-bottom: 4%;
-  margin-left: 4%; }
+  margin-left: 20px; }
+
+select {
+  margin-left: 50px; }
+
+.fondoContacto {
+  background-image: linear-gradient(to right, rgba(209, 218, 236, 0.9), rgba(148, 152, 161, 0.9)), url("../images/bandera2.jpg");
+  background-repeat: unset; }
 
 /* MEDIA QUERIES 360PX */
 @media (max-width: 360px) {
@@ -361,11 +437,24 @@ input {
     border-radius: 15px;
     width: 220px;
     height: 150px; }
-  .fechas {
-    font-size: 12px; }
+  .fechas h3 {
+    font-size: 18px; }
+  .fechas h4 {
+    font-size: 15px;
+    font-family: robotoBold; }
+  .fechas li {
+    font-size: 13px;
+    font-family: robotoBold;
+    padding: 5px; }
+  .videoindex {
+    margin-left: 15px;
+    width: 90%;
+    height: 300px; }
+  .noticias {
+    font-size: 13px; }
   /* PÁGINA NOSOTROS */
   .contenedorNosotros {
-    grid-template-areas: "titulo" "carruselComienzos" "comienzos" "carruselAct" "act" "futer"; }
+    grid-template-areas: "titulo" "carruselComienzos" "comienzos" "carruselAct" "act" "map" "futer"; }
   .textoNosotros {
     font-size: 14px; }
   .carruselComienzos {
@@ -384,6 +473,10 @@ input {
     border-radius: 15px;
     height: 180px;
     width: 300px; }
+  .mapaNosotros {
+    width: 80%;
+    height: 300px;
+    margin-left: 25px; }
   /* PÁGINA CAMPEONATOS */
   .contenedorCampeonatos {
     grid-template-areas: "titulo" "tablaKa" "tablaKt" "tablaAa" "tablaAt" "futer"; }
@@ -401,10 +494,21 @@ input {
   .h3Camp {
     display: inline-block;
     text-align: center; }
+  .videoCampeonatos {
+    height: 300px;
+    width: 90%;
+    margin: 20px; }
   /*PÁGINA REGLAMENTOS*/
   .textoReglamentos {
     font-size: 14px;
     margin-top: 20px; }
+  .estiloAcordeon h2 button {
+    font-size: 15px; }
+  .estiloAcordeon p {
+    font-size: 14px; }
+  .pdf {
+    height: 300px;
+    width: 80%; }
   .parallax {
     height: 30rem; }
   .titulo h3 {

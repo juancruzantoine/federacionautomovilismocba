@@ -65,15 +65,40 @@ $estilos: (borde: 15px, center: center);
     text-align: map-get($estilos, center);
     margin-bottom: 5%;
     list-style: none;
+    background-image: linear-gradient(to right, rgba(47,79,152,0.8), rgba(148, 152, 161,0.8)), url("../images/carrera5.jpg");
+    background-repeat: no-repeat;
+    padding: 50px;
+    h3{
+        background-image: linear-gradient(to right, $colorPrincipal, rgb(148, 152, 161));
+        padding: 10px;
+        border-radius: 15px;
+        font-family: robotoBold;
+        font-size: 35px;
+    }
+    h4{
+        font-size: 30px;
+        font-family: robotoBold;
+        ;
+    }
 }
 
 .principal__fechas{
     grid-area: fechas;
     display: block;
-    transition:transform 2s;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 5px;
     }
+
+.videoindex{
+    margin-left: 18%;
+}
+
+.noticias{
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 /* PÁGINA NOSOTROS */
 
@@ -82,9 +107,23 @@ $estilos: (borde: 15px, center: center);
     grid-template-areas:"titulo titulo titulo"
                         "carruselComienzos comienzos comienzos"
                         "act act carruselAct"
+                        "map map map"
                         "futer futer futer";
 }
 
+.map{
+    grid-area: map;
+    h4{
+        font-size: 25px;
+        font-family: robotoBold;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+    iframe{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
 .carruselComienzos{
     grid-area: carruselComienzos;
     margin: 5px;
@@ -127,16 +166,12 @@ $estilos: (borde: 15px, center: center);
 /* PÁGINA CAMPEONATOS */
 
 .contenedorCampeonatos{
-    width: 100%;
-    display: grid;
-    grid-template-areas:"titulo titulo titulo"
-                        "tablaKa . tablaKt"
-                        "tablaAa . tablaAt"
-                        "futer futer futer";
+    background-image: linear-gradient(to right, rgba(218, 216, 216, 0.9), rgba(193, 193, 194, 0.9)), url("../images/podio.jpg");
+    background-repeat:unset;
 }
-
 #tablaKa{
     grid-area: tablaKa;
+    
 }
 #tablaKt{
     grid-area: tablaKt;
@@ -150,17 +185,22 @@ $estilos: (borde: 15px, center: center);
 
 .tabla{
     font-family: roboto;
-    font-size: 20px;
-    padding: 20px;
-    border: solid 3px  rgb(47,79,152);
-    border-radius: 10px;
-    display: inline-block;
-    margin-left: 20%;
+    font-size: 22px;
+    border: solid 5px  rgb(47,79,152);
+    border-radius: 15px solid 5px  rgb(47,79,152);
+    padding: 40px;
+    margin-left: 24%;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.4);
+    margin-top: 30px;
+    th{
+        background-color: rgba(176, 169, 243, 0.4);
+    }
 }
 
-.tabla td{
-    text-align: center;
-    padding: 5px;
+.videoCampeonatos{
+    margin: 40px;
+    margin-left: 70px;
 }
 
 /*PÁGINA REGLAMENTOS*/
@@ -169,14 +209,32 @@ $estilos: (borde: 15px, center: center);
     font-family: robotoLight;
     font-size: 18px;
     text-align: justify;
+    margin: 15px;
     margin-top: 20px;
+}
+
+.estiloAcordeon{
+    h2 button{
+        background-image: linear-gradient(to left, $colorPrincipal, rgb(148, 152, 161));
+        color: $colorSecundario;
+        font-family: robotoBold;
+        font-size: 20px;
+        transition: background-image ,10s;
+        &:hover{
+            background-image: linear-gradient(to right, $colorPrincipal, rgb(148, 152, 161));
+        }
+    }
+    p{
+        font-size: 20px;
+        font-family: roboto;
+    }
 }
 
 /*Efecto Parallax*/
 
 .img-1{
     background-image: url("../images/karting\ tierra.jpeg");
-    margin-top: 10%;
+    margin-top: 40px;
 }
 
 .img-2{
@@ -222,14 +280,17 @@ form{
     font-size: 20px;
     display: inline-block;
     margin-top: 10px;
-    margin-left: 320px;
+    margin-bottom: 40px;
+    margin-left: 360px;
     width: 700px;
     border: solid 3px rgb(47,79,152);
+    background-image: linear-gradient(to left, $colorPrincipal, rgb(148, 152, 161));
 }
 
 label{
     display: block;
     padding: 10px;
+    margin-left: 15px;
 }
 
 textarea{
@@ -244,10 +305,17 @@ input{
     display: inline;
     margin-top: 4%;
     margin-bottom: 4%;
-    margin-left: 4%;
+    margin-left: 20px;
 }
 
+select{
+    margin-left: 50px;
+}
 
+.fondoContacto{
+    background-image: linear-gradient(to right, rgba(209, 218, 236, 0.9), rgba(148, 152, 161,0.9)), url("../images/bandera2.jpg");
+    background-repeat:unset;
+}
 
 
 /* MEDIA QUERIES 360PX */
@@ -281,9 +349,28 @@ input{
     }
     
     .fechas{
-        font-size: 12px;
+        h3{
+            font-size: 18px;
+        }
+        h4{
+            font-size: 15px;
+            font-family: robotoBold;
+        }
+        li{
+            font-size: 13px;
+            font-family: robotoBold;
+            padding: 5px;
+        }
+    }
+    .videoindex{
+        margin-left: 15px;
+        width: 90%;
+        height: 300px;
     }
     
+    .noticias{
+        font-size: 13px;
+    }
     /* PÁGINA NOSOTROS */
 
     .contenedorNosotros{
@@ -292,6 +379,7 @@ input{
                         "comienzos"
                         "carruselAct"
                         "act"
+                        "map"
                         "futer";
     }
 
@@ -322,6 +410,12 @@ input{
         width: 300px;
     }
 
+    .mapaNosotros{
+        width: 80%;
+        height: 300px;
+        margin-left: 25px;
+    }
+    
     /* PÁGINA CAMPEONATOS */
 
     .contenedorCampeonatos{
@@ -353,13 +447,31 @@ input{
         text-align: center;
     }
 
+    .videoCampeonatos{
+        height: 300px;
+        width: 90%;
+        margin: 20px;
+    }
+
     /*PÁGINA REGLAMENTOS*/
 
     .textoReglamentos{
         font-size: 14px;
         margin-top: 20px;
     }
-
+    
+    .estiloAcordeon{
+        h2 button{
+            font-size: 15px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .pdf{
+        height: 300px;
+        width: 80%;
+    }
     .parallax{
         height: 30rem;
     }
